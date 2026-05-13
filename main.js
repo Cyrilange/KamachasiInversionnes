@@ -1,5 +1,3 @@
-Copier;
-
 document
   .getElementById("credit-form")
   .addEventListener("submit", async function (e) {
