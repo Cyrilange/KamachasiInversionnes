@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inversiones Kamachasi S.A. — Microcréditos Online</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-area">
+        <div class="logo-shield">K</div>
+        <div class="logo-text">
+          <p>Inversiones</p>
+          <h1>Kamachasi S.A.</h1>
+        </div>
+      </div>
+      <p class="tagline">
+        Microcréditos online — <span>rápido, seguro</span> y sin complicaciones.
+      </p>
+    </header>
+
+    <nav>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#como-funciona">¿Cómo funciona?</a>
+      <a href="#requisitos">Requisitos</a>
+      <a href="#solicitar">Solicitar</a>
+    </nav>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios">
+      <div class="section-title">
+        <h2>Beneficios</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <span class="benefit-icon">⚡</span>
+          <h3>Aprobación rápida</h3>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">📱</span>
+          <h3>100% Online</h3>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🔒</span>
+          <h3>Proceso seguro y confidencial</h3>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">📈</span>
+          <h3>Montos adaptados a tu perfil</h3>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">⏱️</span>
+          <h3>Respuesta en poco tiempo</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona">
+      <div class="section-title">
+        <h2>¿Cómo funciona?</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h3>Completa el formulario</h3>
+            <p>Rellena tus datos personales y el monto que necesitas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h3>Adjunta tus datos</h3>
+            <p>
+              Ten a mano tu documento de identidad e información de ingresos.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h3>Evaluamos tu solicitud</h3>
+            <p>
+              Nuestro equipo revisa tu solicitud de forma rápida y discreta.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <h3>Recibe respuesta</h3>
+            <p>
+              Te contactamos en poco tiempo con la respuesta a tu solicitud.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-text">
+            <h3>¡Obtén tu dinero!</h3>
+            <p>Una vez aprobado, el dinero llega a tu cuenta bancaria.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUISITOS -->
+    <section id="requisitos">
+      <div class="section-title">
+        <h2>Requisitos</h2>
+        <div class="divider"></div>
+      </div>
+      <ul class="req-list">
+        <li>Ser mayor de 18 años</li>
+        <li>Documento de identidad vigente</li>
+        <li>
+          Tener ingresos demostrables (empleo, negocio o actividad
+          independiente)
+        </li>
+        <li>Número de teléfono activo</li>
+        <li>Correo electrónico válido</li>
+        <li>Cuenta bancaria o medio de pago</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="hero-cta">
+      <p style="font-size: 1.1rem">¿Listo para solicitar tu microcrédito?</p>
+      <a href="#solicitar" class="cta-btn">¡Solicitar ahora!</a>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div id="solicitar">
+      <div class="section-title" style="max-width: 700px; margin: 0 auto 32px">
+        <h2>Solicita tu microcrédito</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="form-card">
+        <div id="alert-box"></div>
+
+        <form id="credit-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Juan Pérez"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono *</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="+54 9 11 1234-5678"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="juan@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="dni">Documento de identidad *</label>
+              <input
+                type="text"
+                id="dni"
+                name="dni"
+                placeholder="12.345.678"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="monto">Monto solicitado *</label>
+              <select id="monto" name="monto" required>
+                <option value="">Seleccionar...</option>
+                <option>Hasta $50.000</option>
+                <option>$50.000 – $100.000</option>
+                <option>$100.000 – $250.000</option>
+                <option>$250.000 – $500.000</option>
+                <option>Más de $500.000</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ingresos">Tipo de ingresos *</label>
+              <select id="ingresos" name="ingresos" required>
+                <option value="">Seleccionar...</option>
+                <option>Empleo en relación de dependencia</option>
+                <option>Negocio propio</option>
+                <option>Actividad independiente / freelance</option>
+                <option>Jubilación / pensión</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="mensaje">Mensaje adicional (opcional)</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Cuéntanos para qué necesitas el crédito..."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Enviar solicitud
+          </button>
+          <p class="form-notice">
+            🔒 Tus datos están protegidos y son 100% confidenciales.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Inversiones Kamachasi S.A.</strong></p>
+      <p style="margin-top: 8px">
+        Con cariño ❤️ — Confianza, compromiso y soluciones a tu alcance.
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
