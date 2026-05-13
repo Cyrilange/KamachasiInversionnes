@@ -1,0 +1,16 @@
+{
+  "name": "Inversiones Kamachasi S.A.",
+  "short_name": "Kamachasi",
+  "description": "Microcréditos online rápidos, seguros y sin complicaciones.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A0A0A",
+  "theme_color": "#C9A84C",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

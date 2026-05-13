@@ -30,7 +30,6 @@ a {
   text-decoration: none;
 }
 
-/* HEADER */
 header {
   background: linear-gradient(
     135deg,
@@ -51,7 +50,7 @@ header {
   flex-wrap: wrap;
 }
 
-.logo-shield {
+/* .logo-shield {
   width: 70px;
   height: 70px;
   background: var(--gold);
@@ -62,7 +61,7 @@ header {
   font-size: 28px;
   color: var(--red-dark);
   font-weight: bold;
-}
+} */
 
 .logo-text h1 {
   font-size: clamp(1.6rem, 5vw, 2.8rem);
@@ -89,7 +88,6 @@ header {
   font-weight: bold;
 }
 
-/* NAV */
 nav {
   background: var(--dark2);
   border-bottom: 1px solid var(--gold-dark);
