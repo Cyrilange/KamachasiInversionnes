@@ -1,3 +1,24 @@
+// ── ACCORDÉON ──────────────────────────────────────────────
+document.querySelectorAll(".accordion-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const isOpen = this.getAttribute("aria-expanded") === "true";
+    const body = this.nextElementSibling;
+
+    // Fermer tous les autres
+    document.querySelectorAll(".accordion-btn").forEach((b) => {
+      b.setAttribute("aria-expanded", "false");
+      b.nextElementSibling.classList.remove("open");
+    });
+
+    // Ouvrir celui-ci si était fermé
+    if (!isOpen) {
+      this.setAttribute("aria-expanded", "true");
+      body.classList.add("open");
+    }
+  });
+});
+
+// ── FORMULAIRE ─────────────────────────────────────────────
 document
   .getElementById("credit-form")
   .addEventListener("submit", async function (e) {
