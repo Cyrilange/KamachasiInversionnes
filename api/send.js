@@ -1,13 +1,47 @@
 import nodemailer from "nodemailer";
+import formidable from "formidable";
+import fs from "fs";
+
+export const config = { api: { bodyParser: false } };
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
 
-  const { nombre, telefono, email, dni, monto, ingresos, mensaje } = req.body;
+  // Parser le FormData
+  const form = formidable({ maxFileSize: 5 * 1024 * 1024 });
+  const [fields, files] = await form.parse(req);
+
+  const get = (key) =>
+    Array.isArray(fields[key]) ? fields[key][0] : fields[key];
+
+  const nombre = get("nombre");
+  const telefono = get("telefono");
+  const email = get("email");
+  const dni = get("dni");
+  const monto = get("monto");
+  const ingresos = get("ingresos");
+  const mensaje = get("mensaje") || "";
 
   if (!nombre || !telefono || !email || !dni || !monto || !ingresos) {
     return res.status(400).json({ error: "Faltan campos obligatorios" });
   }
+
+  const attachments = [];
+
+  const addFile = (field, label) => {
+    const f = files[field]?.[0];
+    if (f && f.size > 0) {
+      const ext = f.originalFilename?.split(".").pop() || "jpg";
+      attachments.push({
+        filename: `${label}.${ext}`,
+        content: fs.readFileSync(f.filepath),
+      });
+    }
+  };
+
+  addFile("dni-frente", "DNI_frente");
+  addFile("dni-dorso", "DNI_dorso");
+  addFile("nomina", "Nomina");
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -22,6 +56,7 @@ export default async function handler(req, res) {
     to: process.env.GMAIL_USER,
     replyTo: email,
     subject: `Nueva solicitud de microcrédito — ${nombre}`,
+    attachments,
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
         <div style="background: #6B0F0F; padding: 24px; text-align: center;">
@@ -48,7 +83,7 @@ export default async function handler(req, res) {
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
               <td style="padding: 10px 0; color: #666;">Monto solicitado</td>
-              <td style="padding: 10px 0; color: #C9A84C; font-weight: bold;">${monto}</td>
+              <td style="padding: 10px 0; color: #C9A84C; font-weight: bold;">$ ${Number(monto).toLocaleString("es-AR")}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
               <td style="padding: 10px 0; color: #666;">Tipo de ingresos</td>
@@ -64,6 +99,9 @@ export default async function handler(req, res) {
                 : ""
             }
           </table>
+          <p style="margin-top: 16px; font-size: 0.85rem; color: #999;">
+            📎 Adjuntos: DNI frente, DNI dorso, nómina
+          </p>
         </div>
         <div style="background: #f9f9f9; padding: 16px; text-align: center; font-size: 0.8rem; color: #999;">
           Solicitud recibida desde el sitio web de Inversiones Kamachasi S.A.

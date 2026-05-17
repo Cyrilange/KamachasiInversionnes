@@ -9,21 +9,12 @@ document
     btn.textContent = "Enviando...";
     alertBox.innerHTML = "";
 
-    const params = {
-      nombre: document.getElementById("nombre").value,
-      telefono: document.getElementById("telefono").value,
-      email: document.getElementById("email").value,
-      dni: document.getElementById("dni").value,
-      monto: document.getElementById("monto").value,
-      ingresos: document.getElementById("ingresos").value,
-      mensaje: document.getElementById("mensaje").value,
-    };
+    const formData = new FormData(e.target);
 
     try {
       const res = await fetch("/api/send", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(params),
+        body: formData,
       });
 
       if (res.ok) {

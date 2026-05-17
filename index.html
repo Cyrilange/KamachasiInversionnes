@@ -231,15 +231,17 @@
               />
             </div>
             <div class="form-group">
-              <label for="monto">Monto solicitado *</label>
-              <select id="monto" name="monto" required>
-                <option value="">Seleccionar...</option>
-                <option>Hasta $50.000</option>
-                <option>$50.000 – $100.000</option>
-                <option>$100.000 – $250.000</option>
-                <option>$250.000 – $500.000</option>
-                <option>Más de $500.000</option>
-              </select>
+              <label for="monto">Monto solicitado * </label>
+              <input
+                type="number"
+                id="monto"
+                name="monto"
+                placeholder="Ej: 150000"
+                min="1000"
+                step="1000"
+                required
+              />
+              <small>Ingresa el monto en pesos ($)</small>
             </div>
             <div class="form-group">
               <label for="ingresos">Tipo de ingresos *</label>
@@ -259,6 +261,48 @@
                 name="mensaje"
                 placeholder="Cuéntanos para qué necesitas el crédito..."
               ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="dni-frente"
+                >Foto del documento de indentidad — Frente *</label
+              >
+              <input
+                type="file"
+                id="dni-frente"
+                name="dni-frente"
+                accept="image/*,application/pdf"
+                required
+              />
+              <small>JPG, PNG o PDF · máx. 5 MB</small>
+            </div>
+
+            <div class="form-group full">
+              <label for="dni-dorso"
+                >Foto del documento de indentidad — Dorso *</label
+              >
+              <input
+                type="file"
+                id="dni-dorso"
+                name="dni-dorso"
+                accept="image/*,application/pdf"
+                required
+              />
+              <small>JPG, PNG o PDF · máx. 5 MB</small>
+            </div>
+
+            <div class="form-group full">
+              <label for="nomina"
+                >Documento de nómina / recibo de sueldo *</label
+              >
+              <input
+                type="file"
+                id="nomina"
+                name="nomina"
+                accept="image/*,application/pdf"
+                required
+              />
+              <small>JPG, PNG o PDF · máx. 5 MB</small>
             </div>
           </div>
 
