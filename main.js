@@ -58,3 +58,20 @@ document
       btn.textContent = "Enviar solicitud";
     }
   });
+
+
+  //block for perso 
+
+  const montoSelect = document.getElementById("monto");
+const montoPersonalizado = document.getElementById("monto-personalizado");
+
+montoSelect.addEventListener("change", function () {
+  if (this.value === "custom") {
+    montoPersonalizado.style.display = "block";
+    montoPersonalizado.required = true;
+  } else {
+    montoPersonalizado.style.display = "none";
+    montoPersonalizado.required = false;
+    montoPersonalizado.value = "";
+  }
+});
