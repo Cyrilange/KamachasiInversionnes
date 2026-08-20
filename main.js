@@ -31,6 +31,9 @@ document
     alertBox.innerHTML = "";
 
     const formData = new FormData(e.target);
+    if (montoSelect.value === "custom") {
+      formData.set("monto", montoPersonalizado.value);
+    }
 
     try {
       const res = await fetch("/api/send", {
