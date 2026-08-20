@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
 
   // Parser le FormData
-  const form = formidable({ maxFileSize: 15 * 1024 * 1024 });
+  const form = formidable({ maxFileSize: 5 * 1024 * 1024 });
   const [fields, files] = await form.parse(req);
 
   const get = (key) =>
